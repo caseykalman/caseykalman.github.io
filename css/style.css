@@ -3,8 +3,6 @@ body, html {
 	height:100%;
 	margin:0;
 	background-color: #ffffff;
-
-
 }
 
 main {
@@ -70,7 +68,8 @@ h1 {
 
 nav {
 	margin-bottom:35px;
-	display:flex;
+	/*display:flex;*/
+	display:block;
 	justify-content: center;
 }
 
@@ -156,7 +155,7 @@ nav li:hover {
 }
 
 .cell {
-	display:flex;
+	/*display:flex;*/
 	align-content:center;
 }
 
@@ -350,7 +349,8 @@ nav li:hover {
 }
 
 #icons {
-	display:flex;
+	/*display:flex;*/
+	display:block;
 	align-content:top;
 	margin:0px auto;
 }
@@ -383,7 +383,8 @@ nav li:hover {
 
 .map {
 	margin:0px 0px 30px 0px;
-	display:flex;
+	/*display:flex;*/
+	display:block;
 	align-content:center;
 }
 
@@ -428,7 +429,8 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 .contact {
 	margin-left:30px;
 	border-left:1px solid #efefef;
-	display:flex;
+	/*display:flex;*/
+	display:block;
 	align-content:center;
 }
 
@@ -451,7 +453,8 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
  	#headshot {
  		margin:0px auto;
  		text-align:center;
- 		display:flex;
+ 		/*display:flex;*/ 
+ 		display:block;
  	}
 }
 
@@ -479,7 +482,8 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 	#headshot {
 		margin:0px auto;
 		text-align:center;
-		display:flex;
+		/*display:flex;*/
+		display:block;
 	}
 
 	.container, .row, .cell, img{
