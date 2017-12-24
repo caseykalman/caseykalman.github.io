@@ -32,6 +32,16 @@ h1 {
 	text-align:center;
 }
 
+h1 > a {
+	text-decoration:none;
+	color:#001b5d;
+}
+
+h1 > a:hover, h1 > a:focus, h1 > a:active {
+	text-decoration:none;
+	color:#001b5d;
+}
+
 .page-header {
 	padding:0px 10px;
 	width:100%;

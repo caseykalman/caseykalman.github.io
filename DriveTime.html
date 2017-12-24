@@ -1,60 +1,62 @@
 <!DOCTYPE html>
-<head>
-	 <meta charset=UTF-8>
-	<meta name="viewport" content="width=device-width,initial-scale=1"/>
-  	<meta name="keywords" content="maps,cartography"/>
-	<title>Casey Kalman - Contact</title>
+<html>
+  <head>
+  	<meta charset=UTF-8>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="keywords" content="maps,cartography"/>
+  	<title>Casey Kalman - Drive Time Map</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+  </head>
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-  	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-</head>
-<body>
+  <body>
+
+  	<div class="page-header">
+  		<a href="index.html"><img id="logo" src="assets/blueLogo.png"></a>
+  		<h1><a href="index.html">CASEY M. KALMAN</a></h1>
+  	</div>
+
+    <main>
+
+      <nav>
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                <span class="menu"></span>
+              </button> 
+            </div>
+          <ul id="navbar" class="navbar-nav navbar-collapse collapse">  <!--Unordered list for links on navbar -->
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
 
 
-	<div class="page-header">
-		<img id="logo" src="assets/blueLogo.png">
-		<h1>CASEY M. KALMAN</h1>
-	</div>
 
-  <nav>
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span> 
-            <span class="glyphicon glyphicon-menu-hamburger"></span>
-            <span class="menu"></span>
-          </button> 
+      <div class="container">
+        <div class="row">
+            <div class="cell col-xs-12 col-md-6">
+               <img id="drivetime" src="assets/drivetime.png">
+            </div>
+            <div class="description col-xs-12 col-md-5 pull-right">
+                <p>This project was completed while working for the <a href="http://worh.org/" target="_blank">Wisconsin Office of Rural Health (WORH)</a>. The analysis was done with the intent of developing a more thorough understanding of access to emergency medical services in rural areas of the state.</p>
+                <p>Facility locations were collected for the state of Wisconsin as well as surrounding states. A buffer was created to identify locations within 50 miles of the Wisconsin boarder. The ArcGIS Network Analysis tool was used to run a drive time analysis to generate the the firework polygons. A spatial join with census blocks was then used to determine what percentage of the population lives within a 10, 20, and 30 minute drive from the facilities.</p>
+                <p>Finally, Adobe Illustrator and InDesign were used to create the final design and layout.</p>
+                <p>This map is now available on the <a href="http://worh.org/library/drive-time-emergency-care" target="_blank">WORH</a> website and was published online by <a href="https://www.wiscontext.org/fragility-volunteer-ems-systems-rural-wisconsin" target="_blank">WisContext</a></p> 
+
+                <a href="index.html">Back to portfolio</a>
+            </div>
         </div>
-      <ul id="navbar" class="navbar-nav navbar-collapse collapse">  <!--Unordered list for links on navbar -->
-        <li><a href="index.html">Portfolio</a></li>
-        <li><a href="aboutme.html">About Me</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-  </nav>
-
-<main>
-
-<div class="container">
-  <div class="row">
-      <div class="cell col-xs-12 col-md-6">
-         <img id="drivetime" src="assets/drivetime.png">
       </div>
-      <div class="description col-xs-12 col-md-5 pull-right">
-          <p>This project was completed while working for the <a href="http://worh.org/" target="_blank">Wisconsin Office of Rural Health (WORH)</a>. The analysis was done with the intent of developing a more thorough understanding of access to emergency medical services in rural areas of the state.</p>
-          <p>Facility locations were collected for the state of Wisconsin as well as surrounding states. A buffer was created to identify locations within 50 miles of the Wisconsin boarder. The ArcGIS Network Analysis tool was used to run a drive time analysis to generate the the firework polygons. A spatial join with census blocks was then used to determine what percentage of the population lives within a 10, 20, and 30 minute drive from the facilities.</p>
-          <p>Finally, Adobe Illustrator and InDesign were used to create the final design and layout.</p>
-          <p>This map is now available on the <a href="http://worh.org/library/drive-time-emergency-care" target="_blank">WORH</a> website and was published online by <a href="https://www.wiscontext.org/fragility-volunteer-ems-systems-rural-wisconsin" target="_blank">WisContext</a></p> 
 
-          <a href="index.html">Back to portfolio</a>
-      </div>
-  </div>
-</div>
+    </main>
 
-</main>
-
-<footer class="footer">
+  <footer class="footer">
       <div class="icons">
               <a href="https://www.linkedin.com/in/caseykalman/" target=_blank><img class="social" src="assets/linkedin.png"></a>
               <a href="https://twitter.com/Casey_Kalman" target=_blank><img class="social" src="assets/twitter.png"></a>
