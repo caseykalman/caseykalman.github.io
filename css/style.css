@@ -184,7 +184,7 @@ nav li:hover {
 
 /* Resume */
 .resume {
-	margin:50px auto;
+	margin:25px auto;
 	padding:0px;
 	text-align:left;
 }
@@ -322,29 +322,32 @@ nav li:hover {
 	display:block;
 	position:relative;
 	margin: 40px auto;
-	
 }
 
 #headshot {
-	/*display:block;*/
+	display:block;
 	position:relative;
 	text-align:left;
 	max-width:300px;
-	padding:0px 10px;
+	padding:0px 15px;
+	margin:0px 10px;
 }
 
 .aboutme .row .container p {
 	text-align:justify;
-	/*display:block;*/
+	display:block;
 }
 
 .aboutme .row .container i {
 	text-align:justify;
-	/*display:block;*/
+	display:block;
 	font-size:18px;
 	opacity:.8;
 }
 
+#aboutme {
+	margin-left:25px;
+}
 
 /* Footer*/
 .footer {
@@ -459,8 +462,16 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
  	#headshot {
  		margin:0px auto;
  		text-align:center;
- 		display:flex;
+ 		display:block;
+ 	}
 
+ 	.skills {
+ 		margin-left:0px;
+ 	}
+
+ 	.resume .container {
+ 		margin-bottom:10px;
+ 		margin-top:10px;
  	}
 }
 
@@ -482,17 +493,27 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 		letter-spacing: normal;
 		padding:20px 0px;
 		display:block;
+		text-decoration: none;
+	}
+
+	h1 > a:hover, h1 > a:focus, h1 > a:active {
+		text-decoration:none;
+		color:#001b5d;
 	}
 
 
 	#headshot {
 		margin:0px auto;
 		text-align:center;
-		display:flex;
+		display:block;
 	}
 
 	.container, .row, .cell, img{
 		margin:0px auto;
 		overflow:hidden;
+	}
+
+	.skills {
+		margin:0px;
 	}
 }
