@@ -178,6 +178,10 @@ nav li:hover {
 	box-shadow:0px 0px 0px #ffffff;
 }
 
+.responsive-img {
+	max-width:100%;
+}
+
 /*Individual Map Views */
 #drivetime {}
 
