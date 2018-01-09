@@ -78,7 +78,6 @@ h1 > a:hover, h1 > a:focus, h1 > a:active {
 
 nav {
 	margin-bottom:35px;
-	display:flex;
 	justify-content: center;
 }
 
@@ -145,7 +144,6 @@ nav li:hover {
 /* Portfolio */
 
 .thumbnail {
-	max-width:260px;
 	vertical-align:center;
 	text-align:center;
 	border:0px solid #ffffff;
@@ -365,7 +363,6 @@ nav li:hover {
 }
 
 #icons {
-	display:flex;
 	align-content:top;
 	margin:0px auto;
 }
@@ -441,7 +438,6 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 .contact {
 	margin-left:30px;
 	border-left:1px solid #efefef;
-	display:flex;
 	align-content:center;
 }
 
@@ -503,7 +499,6 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 		color:#001b5d;
 	}
 
-
 	#headshot {
 		margin:0px auto;
 		text-align:center;
@@ -518,4 +513,35 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 	.skills {
 		margin:0px;
 	}
+
+	.navbar-nav>li {
+		float: none;
+		display:inline-block;
+	}
+
+	.navbar-nav {
+		float: none;
+	}
+
+	nav {
+		text-align:center;
+	}
+}
+
+
+@media (min-width:768px) {
+
+	.navbar-nav>li {
+		float: none;
+		display:inline-block;
+	}
+
+	.navbar-nav {
+		float: none;
+	}
+
+	nav {
+		text-align:center;
+	}
+
 }
