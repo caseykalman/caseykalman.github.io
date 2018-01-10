@@ -456,6 +456,12 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 
 
 /* Media Queries */
+@media (max-width:1200px){
+	#aboutme {
+		margin-left:75px;
+	}
+}
+
 @media (max-width:990px){
  	#headshot {
  		margin:0px auto;
@@ -471,6 +477,7 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
  		margin-bottom:10px;
  		margin-top:10px;
  	}
+
 }
 
 
