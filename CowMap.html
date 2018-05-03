@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
+
+  <style>
+
+  #map1 svg {
+    background: #efefef;
+  }
+
+  .counties {
+    stroke:#d9d8d8;
+    stroke-width: 0.65px;
+  }
+
+  .states {
+    fill:#8f7cda;
+    stroke:#ffffff;
+  }
+
+#map2 svg {
+    background: #efefef;
+  }
+
+  </style>
+</head>
+
+<body>
+<h1> Cattle-to-Person Ratio</h1>
+</br>
+
+<div id="map2"></div>
+
+<svg height="5" width="5" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="lightstripe" patternUnits="userSpaceOnUse" width="5" height="5"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1JyBoZWlnaHQ9JzUnPgogIDxyZWN0IHdpZHRoPSc1JyBoZWlnaHQ9JzUnIGZpbGw9J3doaXRlJy8+CiAgPHBhdGggZD0nTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVonIHN0cm9rZT0nIzg4OCcgc3Ryb2tlLXdpZHRoPScxJy8+Cjwvc3ZnPg==" x="0" y="0" width="5" height="5"> </image> </pattern> </defs> </svg>
+
+</body>
+<!--Wisconsin Counties Map-->
+
+<script>
+//Set margin, height, width as variables
+var margin = {top: 20, left: 20, bottom: 20, right: 20}
+    height = 600- margin.top - margin.bottom,
+    width = 960 - margin.left - margin.right;
+//Append svg
+var svg2 = d3.select("#map2").append("svg")
+  .attr("height", height)
+  .attr("width", width)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.right + ")");
+
+//Read in topojson
+d3.queue()
+  .defer(d3.json, "WiscCountiesSansProjection_Data.json")//read in topojson file
+//  .defer(d3.json,"WisconsinOutline.json")
+  .await(ready);
+
+
+//define projection
+  var projection2 = d3.geoTransverseMercator()
+  .translate([width/3.5, height/1.7])
+  .rotate([90,-44])
+  .scale(6000);//change the scale (how far your are zoomed in or out)
+
+//define paths using projection
+var path2 = d3.geoPath()
+  .projection(projection2)
+
+function ready (error, data) {
+
+//select features to draw and set as variable
+  var counties = topojson.feature(data, data.objects.counties).features
+
+//define tooltip to be applied later
+  var tooltip = d3.select("body").append("div")
+    .style("position", "absolute")
+    .style("padding", "0 10px")
+    .style("background", "#ffffff")
+    .attr("class", "tooltip")
+    .style("opacity", 0.5);
+
+  var t = d3.transition().duration(50);//define transition time for tooltip/changes in color
+
+  var color = d3.scaleThreshold()
+    .domain([0.16001,0.31001,0.47001,0.58001,0.94001,1.15001,1.41001,2.02001,3.36001,6.47001])
+    .range(["#f7fcf0","#e0f3db", "#ccebc5", "#a8ddb5", "#7bccc4", "#4eb3d3", "#2b8cbe", "#0868ac", "#084081", "#062953"]);
+
+  var path = d3.geoPath();
+
+//Draw counties
+  svg2.selectAll(".counties")
+    .data(counties)
+    .enter().append("path")
+      .attr("class", "counties")
+      .style("fill", function(d) {
+          if (d.properties.CowRatio === null) {return "url(#lightstripe)"}
+          else { return color(d.properties.CowRatio) }
+      ;})
+      .attr("d", path2)
+    .on("mouseover", function(data) { //add mouseover effect (tooltip and color)
+      tooltip.transition().duration(200)
+        .style("opacity", 0.9);//Changes the color on roll over
+
+      tooltip.html(data.properties.County + " " + data.properties.CowRatio)//changes content of tooltip
+      .style("top", (d3.event.pageY - 35) + "px" ) //changes position of the tool tip in relation to the mouse
+      .style("left", (d3.event.pageX - 30) + "px" )
+      .style("z-index", 10)//Brings tooltip to front
+      .style('display', 'block');
+
+      d3.select(this) //Changes the color on roll over
+        .style("opacity", 0.5);
+    });
+
+    d3.selectAll(".counties")//Makes all rollover effects go away after mouseover
+      .on("mouseout", function(data) {
+        tooltip.html('')
+
+      d3.select(this)
+       .style("opacity", 1);
+
+    });
+
+    var legendRectSize = 18;
+    var legendSpacing = 4;
+
+    var legend = svg2.selectAll(".legend")
+      .data(color.domain())
+      .enter()
+      .append("g")
+        .attr("class", "legend")
+        .attr("transform", function(d,i) {
+          var height = legendRectSize + legendSpacing;
+          var offset = height * color.domain().length/45;
+          var horz = 30 * legendRectSize;
+          var vert = i * height - offset*-55;
+          return "translate(" + horz + "," + vert + ")";
+        });
+
+      legend.append("rect")
+        .attr("width", legendRectSize)
+        .attr("height", legendRectSize)
+        .style("fill", color)
+        .style("stroke",color);
+
+
+      legend.append("text")
+       .attr("x", legendRectSize + legendSpacing)
+        .attr("y", legendRectSize - legendSpacing)
+        .text(function(d) {return d});
+
+
+
+
+
+  }
+</script>
+
+
+</html>
