@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<head>
+
+<style>
+  h1 {
+    z-index:5;
+  }
+
+</style>
+
+  <link rel="stylesheet" type="text/css" href="PieChart.css">
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+</br>
+  <h1>Number of Dogs By Breed in Madison, WI</h1>
+  <script>
+
+    d3.csv("DogPieChartD3.csv", function(error, d){
+      console.log(d)
+      d.forEach(function(d){
+          d.count = +d.count; //Changes values to numeric
+      });
+
+      var height = window.innerHeight//to later set height of SVG to window size
+          width = window.innerWidth//to later set width of SVG to window size
+          radius = Math.min(width,height)/3; //set outer radius of pie chart
+
+      var svg = d3.select("body").append("svg")
+        .attr("width", width) //sets SVG width/height to fit window
+        .attr("height", height);
+
+      var group = svg.append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2.5 + ")"); //centers group/graphic within svg
+
+      //Selecting Colors Manually
+      //var color = d3.scaleOrdinal()
+      //  .domain([0, d.length])
+      //  .range(["#13162B","#1D2040","#262B55","#30356A", "#39407F","#434A94",
+      //  "#4C55A9","#565FBE", "#5F6AD3","#6874E8", "#7580EA","#838DEC", "#9199EE",
+        //"#9EA6F0", "#ACB3F2","#BABFF4", "#C8CCF6", "#D5D9F8","#E3E5FA","#F1F2FC"]);
+
+      var color = d3.scaleOrdinal(d3.schemeCategory20b);//Creates ordinal scale for color scheme
+
+      var pie = d3.pie() //draw the pie chart using the data
+        .sort(null)
+        .value(function(d) { return d.count; }); //d.count selects the "count" column from the csv
+
+      var path = d3.arc()
+        .innerRadius(0)//Increase this number to make a doughnut chart
+        .outerRadius(radius);
+
+      //To place labels on the graph
+      //var label = d3.arc()
+      //  .outerRadius(radius-25)
+      //  .innerRadius(radius-25);
+
+      var arcs = group.selectAll(".arc")
+        .data(pie(d))
+        .enter().append("g")
+        .attr("class", "arc");
+
+      var tooltip = d3.select("body").append("div")
+        .style("position", "absolute")
+        .style("padding", "0 10px")
+        .style("background", "#ffffff")
+        .attr("class", "tooltip")
+        .style("opacity", 0.5);
+
+      arcs.append("path") //adds the color scheme as defined above to the chart based on breed
+        .attr("d", path)
+        .attr("fill", function(d) {return color(d.data.breed); //change "breed" to change what the colors represent
+        });
+
+
+      d3.selectAll(".arc")
+      .on("mouseover", function(d){
+
+        tooltip.transition().duration(200)
+          .style("opacity", 0.9);
+
+        tooltip.html(d.data.breed + " " + d.data.count) //this is what will be shown in the tooltip
+          .style("top", (d3.event.pageY - 25) + "px" ) //changes position of the tool tip in relation to the mouse
+          .style("left", (d3.event.pageX - 20) + "px" )
+          .style("z-index", 10)
+          .style('display', 'block');
+
+        d3.select(this)
+          .style("opacity", 0.5);
+      });
+
+      .on("mouseout", function(d){
+        tooltip.html('')
+
+        d3.select(this)
+          .style("opacity", 1);
+      })
+
+
+    });
+
+
+  </script>
+</body>
+<!--<script type="text/javascript" src="PieChart2.js"></script>-->
+</html>
