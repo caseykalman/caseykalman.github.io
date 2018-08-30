@@ -9,6 +9,31 @@ main {
 	margin:0px auto;
 }
 
+.svg1 {
+	display:block;
+	margin: 10px 10px 10px 55px;
+}
+
+path.domain {
+	visibility:hidden;
+}
+
+g.tick line {
+	stroke: #aeaeae;
+	opacity:.5;
+}
+
+g.tick text {
+	text-anchor:end;
+	fill:#aeaeae;
+	font-family:Roboto Helvetica sans-serif;
+}
+
+.area {
+	fill:#aeaeae;
+	opacity:.8;
+}
+
 .text {
 	text-align:justify;
 	font-family:font-family:Poppins, Arial, sans-serif;
