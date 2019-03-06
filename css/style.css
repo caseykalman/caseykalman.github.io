@@ -294,6 +294,15 @@ nav li:hover {
 	margin:0px;
 }
 
+.skills .skillset > h3 {
+	font-family:Poppins, Arial, sans-serif;
+	font-size:14px;
+	font-weight:100;
+	color:#001b5d;
+	opacity:.9;
+	margin:0px;
+}
+
 .skills .skillset > ul {
 	list-style-type:none;
 	font-family:Poppins, Arial, sans-serif;
