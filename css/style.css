@@ -578,3 +578,24 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 	}
 
 }
+
+.twentytwenty-before-label:before {
+	content:"2005";/*put whatever you want the label to say here*/
+	text-align:left;
+	position:absolute;
+	padding:0px 10px;
+	font-family:'Roboto', Sans-Serif;
+	font-style:bold;
+	font-size:14px;
+}
+
+.twentytwenty-after-label:before {
+	content:"2016";/*put whatever you want the label to say here*/
+	text-align:right;
+	position:absolute;
+	padding:0px 10px;
+	font-family:'Roboto', Sans-Serif;
+	font-style:bold;
+	font-size:14px;
+}
+

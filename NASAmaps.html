@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset=UTF-8>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="keywords" content="maps,cartography"/>
+  	<title>Casey Kalman - JQuery Slider</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="lib/twentytwenty-master/twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+  </head>
+
+  <body>
+
+  	<div class="page-header">
+  		<a href="index.html"><img id="logo" src="assets/blueLogo.png"></a>
+  		<h1><a href="index.html">CASEY M. KALMAN</a></h1>
+  	</div>
+
+    <main>
+
+      <nav>
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                <span class="menu"></span>
+              </button> 
+            </div>
+          <ul id="navbar" class="navbar-nav navbar-collapse collapse">  <!--Unordered list for links on navbar -->
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="cell description col-xs-12 col-md-12 pull-bottom">
+                <p>This is a recreation of a graphic from the <a href="https://airquality.gsfc.nasa.gov/">NASA Air Quality Website</a>. With permission from the original creator, the images and animation were recreated for the NASA HAQAST website which I created while working as a Research Assistant at the George Washington University. </p> 
+
+                <a href="index.html">Back to portfolio</a>
+            </div>
+            <div class="col-xs-12 col-md-12">
+               <div id="compare1" height="400px" width="700px" style="margin-top:50px;"class="twentytwenty-container twentytwenty-horizontal">
+                  <img class="twentytwenty-before" src="assets/global_abs_2005_1.jpg" alt="Before"/>
+                  <img class="twentytwenty-after" src="assets/global_abs_2014_1.jpg" alt="After"/>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+
+    </main>
+
+  <footer class="footer">
+      <div class="icons">
+              <a href="https://www.linkedin.com/in/caseykalman/" target=_blank><img class="social" src="assets/linkedin.png"></a>
+              <a href="https://twitter.com/Casey_Kalman" target=_blank><img class="social" src="assets/twitter.png"></a>
+              <a href="mailto:kalman.casey@gmail.com"><img class="social" src="assets/email.png"></a>
+          </div>
+  </footer>
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<!--Bootstrap-->
+<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+<!-JQuery UI-->
+<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<!--EventMove-->
+<script src="http://stephband.info/jquery.event.move/js/jquery.event.move.js">
+</script>
+<!--TwentyTwenty(comparison)-->
+<script src="lib/twentytwenty-master/twentytwenty-master/js/jquery.twentytwenty.js"></script>
+<!--MyJS-->
+<script src="js/main.js">
+</script>
+</body>
+
+</html>
