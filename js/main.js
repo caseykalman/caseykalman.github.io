@@ -13,4 +13,26 @@ $(window).load(function(){
 } );
 
 //D3
-d3.selectAll(".page-header").append("div")
+
+var glow = d3.selectAll(".page-header").append("svg")
+		.attr("width", "100%")
+		.attr("class", "glow");
+
+	glow.append("circle")
+		.attr("cx", "50%")
+		.attr("cy", "33%")
+		.attr("r", 20)
+		.attr("fill", "white")
+		.on("mouseover", function(){
+			d3.select(this).transition()
+				.duration(1700)
+				.attr("fill", "yellow")
+				.attr("r", 40);	
+		})
+		.on("mouseout", function(){
+			d3.select(this).transition()
+				.duration(800)
+				.attr("fill", "white")
+				.attr("r", 20)
+				.attr("opacity", "1");
+		})

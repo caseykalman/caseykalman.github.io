@@ -82,6 +82,7 @@ h1 > a:hover, h1 > a:focus, h1 > a:active {
 	text-align:center;
 	padding:10px 0px;
 	display:block;
+	z-index:10;
 }
 
 /* Nav Bar */
@@ -607,4 +608,20 @@ input[type=submit]:hover {/* When moving the mouse over the submit button, add a
 	font-style:bold;
 	font-size:14px;
 }
+
+.glow {
+	margin:0 auto;
+	top:0;
+	left:0;
+	z-index:0;
+	position:absolute;
+	filter:blur(20px);
+}
+
+
+.glow circle {
+	top:0;
+	opacity:.5;
+}
+
 
