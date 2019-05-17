@@ -20,7 +20,7 @@ var glow = d3.selectAll(".page-header").append("svg")
 
 	glow.append("circle")
 		.attr("cx", "50%")
-		.attr("cy", "34%")
+		.attr("cy", "36%")
 		.attr("r", 20)
 		.attr("fill", "white")
 		.on("mouseover", function(){
